@@ -168,7 +168,7 @@ Download APK
 </div>
 
 <div>
-<h2 id="downloadCount">0</h2>
+<h2>10K+</h2>
 <p>Downloads</p>
 </div>
 
@@ -211,42 +211,16 @@ Upgrade your MLBB gaming experience with Beastkit GFX MLBB Skin Injector! Enjoy 
 <script>
 
 const downloadBtn = document.getElementById("downloadBtn");
-const downloadCount = document.getElementById("downloadCount");
-
-const namespace = "beastkitgfx";
-const key = "downloads";
-
-// auto create counter
-fetch(`https://api.countapi.xyz/create?namespace=${namespace}&key=${key}&value=0`)
-.then(() => {
-
-fetch(`https://api.countapi.xyz/get/${namespace}/${key}`)
-.then(res => res.json())
-.then(data => {
-
-downloadCount.innerText = data.value;
-
-});
-
-});
 
 downloadBtn.addEventListener("click", function() {
 
 downloadBtn.innerText = "Download is starting...";
-
-fetch(`https://api.countapi.xyz/hit/${namespace}/${key}`)
-.then(res => res.json())
-.then(data => {
-
-downloadCount.innerText = data.value;
 
 setTimeout(() => {
 
 window.location.href = "https://gpxcczvqsvngetixmlrx.supabase.co/storage/v1/object/public/maps/Beastkit%20GFX%20V1.apk";
 
 }, 1000);
-
-});
 
 });
 
