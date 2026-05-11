@@ -34,6 +34,9 @@ width:90px;
 height:90px;
 border-radius:22px;
 object-fit:cover;
+box-shadow:
+0 0 15px rgba(3,169,245,0.5),
+0 0 35px rgba(3,169,245,0.25);
 }
 
 .app-info{
@@ -216,10 +219,18 @@ const downloadCount = document.getElementById("downloadCount");
 const namespace = "beastkitgfx";
 const key = "downloads";
 
+// auto create counter
+fetch(`https://api.countapi.xyz/create?namespace=${namespace}&key=${key}&value=0`)
+.then(() => {
+
 fetch(`https://api.countapi.xyz/get/${namespace}/${key}`)
 .then(res => res.json())
 .then(data => {
+
 downloadCount.innerText = data.value;
+
+});
+
 });
 
 downloadBtn.addEventListener("click", function() {
@@ -229,14 +240,16 @@ downloadBtn.innerText = "Download is starting...";
 fetch(`https://api.countapi.xyz/hit/${namespace}/${key}`)
 .then(res => res.json())
 .then(data => {
+
 downloadCount.innerText = data.value;
-});
 
 setTimeout(() => {
 
 window.location.href = "https://gpxcczvqsvngetixmlrx.supabase.co/storage/v1/object/public/maps/Beastkit%20GFX%20V1.apk";
 
 }, 1000);
+
+});
 
 });
 
