@@ -17,9 +17,22 @@ box-sizing:border-box;
 font-family:'Google Sans',sans-serif;
 }
 
+/* hide vertical scrollbar */
+html,
+body{
+scrollbar-width:none;
+-ms-overflow-style:none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar{
+display:none;
+}
+
 body{
 background:#121212;
 color:white;
+overflow-y:scroll;
 }
 
 .header{
@@ -97,6 +110,8 @@ display:flex;
 gap:12px;
 overflow-x:auto;
 padding-bottom:5px;
+scrollbar-width:none;
+-ms-overflow-style:none;
 }
 
 .screenshots::-webkit-scrollbar{
