@@ -9,6 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 
 <style>
+
 *{
 margin:0;
 padding:0;
@@ -26,41 +27,44 @@ padding:20px;
 display:flex;
 align-items:center;
 gap:15px;
-border-bottom:1px solid rgba(255,255,255,0.08);
 }
 
 .app-icon{
-width:85px;
-height:85px;
+width:90px;
+height:90px;
 border-radius:22px;
 object-fit:cover;
 }
 
-.app-info h1{
-font-size:26px;
-font-weight:700;
+.app-info{
+display:flex;
+flex-direction:column;
+justify-content:center;
 }
 
-.app-info p{
-color:#9e9e9e;
-margin-top:5px;
-font-size:14px;
+.app-info h1{
+font-size:28px;
+font-weight:700;
+line-height:1.2;
 }
 
 .install-btn{
-margin-top:15px;
+margin-top:14px;
 display:inline-block;
 background:#03A9F5;
 color:white;
 text-decoration:none;
-padding:13px 30px;
+padding:13px 28px;
 border-radius:50px;
 font-weight:700;
 font-size:15px;
+width:max-content;
 transition:0.2s;
+border:none;
+cursor:pointer;
 }
 
-.install-btn:hover{
+.install-btn:active{
 transform:scale(0.97);
 }
 
@@ -85,6 +89,10 @@ display:flex;
 gap:12px;
 overflow-x:auto;
 padding-bottom:5px;
+}
+
+.screenshots::-webkit-scrollbar{
+display:none;
 }
 
 .screenshots img{
@@ -124,6 +132,7 @@ text-align:center;
 color:#777;
 font-size:13px;
 }
+
 </style>
 </head>
 
@@ -134,12 +143,12 @@ font-size:13px;
 <img class="app-icon" src="https://i.imgur.com/4Z4bdcz.jpeg">
 
 <div class="app-info">
-<h1>MasterKit GFX</h1>
-<p>Zen Corpuz</p>
 
-<a class="install-btn" href="YOUR_APK_LINK_HERE">
+<h1>Beastkit GFX</h1>
+
+<button class="install-btn" id="downloadBtn">
 Download APK
-</a>
+</button>
 
 </div>
 </div>
@@ -198,6 +207,24 @@ Upgrade your MLBB gaming experience with Beastkit GFX MLBB Skin Injector! Enjoy 
 <div class="footer">
 © 2026 Beastkit GFX
 </div>
+
+<script>
+
+const downloadBtn = document.getElementById("downloadBtn");
+
+downloadBtn.addEventListener("click", function() {
+
+downloadBtn.innerText = "Download is starting...";
+
+setTimeout(() => {
+
+window.location.href = "https://gpxcczvqsvngetixmlrx.supabase.co/storage/v1/object/public/maps/Beastkit%20GFX%20V1.apk";
+
+}, 1000);
+
+});
+
+</script>
 
 </body>
 </html>
